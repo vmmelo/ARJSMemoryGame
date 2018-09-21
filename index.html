@@ -6,12 +6,13 @@
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
     <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/game.js"></script>
     <!--<link rel="stylesheet" href="css/style.css">-->
 </head>
 <body style='margin : 0px; overflow: hidden;'>
 
 <div class="scoreBar">
-    <!--<div id="score"></div>-->
+    <div id="score"></div>
 </div>
 
 <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
@@ -37,8 +38,53 @@
     <a-entity camera></a-entity>
 </a-scene>
 </body>
-<footer>
-    <script src="./js/game.js"></script>
-</footer>
+<script>
+    var score = 0;
+
+    function attScore() {
+        document.getElementById("score").innerHTML = "Score: " + score
+    }
+
+    let nautico = document.querySelector("#nautico")
+    let sport = document.querySelector("#sport")
+    let flamengo = document.querySelector("#flamengo")
+    let fluminense = document.querySelector("#fluminense")
+    let corinthians = document.querySelector("#corinthians")
+    let palmeiras = document.querySelector("#palmeiras")
+
+
+    function removeElement(elementId) {
+        // Removes an element from the document
+        let element = document.getElementById(elementId);
+        if(element !== undefined){
+            element.parentNode.removeChild(element);
+        }
+    }
+
+    function verifyMarkers() {
+        validatePair(nautico, sport)
+        validatePair(corinthians, palmeiras)
+        validatePair(flamengo, fluminense)
+        timer = setTimeout(verifyMarkers, 2000)
+
+        //stop timer after reaching the maximum score
+        if(score == 3) {
+            clearTimeout(timer)
+        }
+    }
+
+    function validatePair(teamA, teamB) {
+        if (teamA.object3D.visible && teamB.object3D.visible) {
+            score += 1
+            attScore()
+            removeElement(teamA.id)
+            removeElement(teamB.id)
+            console.log('removed ' + teamA.id)
+            console.log('removed ' + teamB.id)
+        }
+    }
+    attScore()
+    verifyMarkers()
+</script>
 </html>
 
