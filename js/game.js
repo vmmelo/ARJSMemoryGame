@@ -1,8 +1,10 @@
 $(document).ready(function () {
     var score = 0
+    var total_markers = 6
 
     // updates the score label
     function updateScore() {
+        score = (total_markers - jQuery("body").find("a-marker").length) / 2
         document.getElementById("score").innerHTML = "Score: " + score
     }
 
@@ -54,10 +56,9 @@ $(document).ready(function () {
     // validate if a pair was found, increment score and remove the markers
     function validatePair(teamA, teamB) {
         if (teamA.object3D.visible && teamB.object3D.visible) {
-            score += 1
-            updateScore()
             removeElement(teamA.id)
             removeElement(teamB.id)
+            updateScore()
         }
     }
 
