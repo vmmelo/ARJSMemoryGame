@@ -46,6 +46,7 @@ $(document).ready(function () {
         validatePair(corinthians, palmeiras)
         validatePair(flamengo, fluminense)
         let timer = setTimeout(verifyMarkers, 2000)
+        updateScore()
         repositionScore()
         //stop timer after reaching the maximum score
         if (score === 3) {
@@ -58,7 +59,6 @@ $(document).ready(function () {
         if (teamA.object3D.visible && teamB.object3D.visible) {
             removeElement(teamA.id)
             removeElement(teamB.id)
-            updateScore()
         }
     }
 
