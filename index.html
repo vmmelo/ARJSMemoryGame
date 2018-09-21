@@ -5,6 +5,7 @@
     <title>Memory Game ARJS</title>
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+    <script src="./js/jquery-1.11.1.min.js"></script>
     <!--<link rel="stylesheet" href="css/style.css">-->
 </head>
 <body style='margin : 0px; overflow: hidden;'>
@@ -14,22 +15,22 @@
 </div>
 
 <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
-    <a-marker id='corinthians' type='pattern' url='https://raw.githubusercontent.com/MVictorM/ARJSMemoryGame/master/assets/markers/nautico.patt'>
+    <a-marker id='nautico' type='pattern' url='https://raw.githubusercontent.com/MVictorM/ARJSMemoryGame/master/assets/markers/nautico.patt'>
         <a-box position='0 0.5 0' opacity='0.8' material='color: red;'></a-box>
     </a-marker>
-    <a-marker type='pattern' url='https://raw.githubusercontent.com/MVictorM/ARJSMemoryGame/master/assets/markers/sport.patt'>
+    <a-marker id='sport' type='pattern' url='https://raw.githubusercontent.com/MVictorM/ARJSMemoryGame/master/assets/markers/sport.patt'>
         <a-box position='0 0.5 0' opacity='0.8' material='color: red;'></a-box>
     </a-marker>
-    <a-marker type='pattern' url='https://raw.githubusercontent.com/MVictorM/ARJSMemoryGame/master/assets/markers/corinthians.patt'>
+    <a-marker id='corinthians' type='pattern' url='https://raw.githubusercontent.com/MVictorM/ARJSMemoryGame/master/assets/markers/corinthians.patt'>
         <a-box position='0 0.5 0' opacity='0.8' material='color: green;'></a-box>
     </a-marker>
-    <a-marker type='pattern' url='https://raw.githubusercontent.com/MVictorM/ARJSMemoryGame/master/assets/markers/palmeiras.patt'>
+    <a-marker id='palmeiras' type='pattern' url='https://raw.githubusercontent.com/MVictorM/ARJSMemoryGame/master/assets/markers/palmeiras.patt'>
         <a-box position='0 0.5 0' opacity='0.8' material='color: green;'></a-box>
     </a-marker>
-    <a-marker type='pattern' url='https://raw.githubusercontent.com/MVictorM/ARJSMemoryGame/master/assets/markers/flamengo.patt'>
+    <a-marker id='flamengo' type='pattern' url='https://raw.githubusercontent.com/MVictorM/ARJSMemoryGame/master/assets/markers/flamengo.patt'>
         <a-box position='0 0.5 0' opacity='0.8' material='color: blue;'></a-box>
     </a-marker>
-    <a-marker type='pattern' url='https://raw.githubusercontent.com/MVictorM/ARJSMemoryGame/master/assets/markers/fluminense.patt'>
+    <a-marker id='fluminense' type='pattern' url='https://raw.githubusercontent.com/MVictorM/ARJSMemoryGame/master/assets/markers/fluminense.patt'>
         <a-box position='0 0.5 0' opacity='0.8' material='color: blue;'></a-box>
     </a-marker>
     <!-- add a simple camera -->
