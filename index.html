@@ -7,13 +7,11 @@
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
     <script src="./js/jquery-1.11.1.min.js"></script>
     <script src="./js/game.js"></script>
-    <!--<link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body style='margin : 0px; overflow: hidden;'>
 
-<div class="scoreBar">
-    <div id="score"></div>
-</div>
+<div id="score"></div>
 
 <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
     <a-marker id='nautico' type='pattern' url='https://raw.githubusercontent.com/MVictorM/ARJSMemoryGame/master/assets/markers/nautico.patt'>
